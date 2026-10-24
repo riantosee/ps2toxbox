@@ -1,0 +1,14 @@
+# Old prototype builds — do not include
+PadBridge*.exe
+
+# Build artifacts (intermediate / preview builds using non-default output name)
+*.pdb
+*.obj
+
+# Windows thumbnail cache
+Thumbs.db
+desktop.ini
+
+# VS/Rider IDE files
+.vs/
+*.user
