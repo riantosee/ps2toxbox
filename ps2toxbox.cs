@@ -345,7 +345,7 @@ namespace Ps2ToXbox
                 virtualPad = new VirtualXbox360();
                 virtualPad.Connect();
                 running = true; devices.Enabled = false; start.Enabled = false; stop.Enabled = true; timer.Start();
-                outputStatus.Text = "●  Xbox 360 virtual aktif"; outputStatus.ForeColor = Color.FromArgb(119, 224, 181);
+                outputStatus.Text = "●  Xbox 360 virtual controller active"; outputStatus.ForeColor = Color.FromArgb(119, 224, 181);
             }
             catch (DllNotFoundException)
             {
@@ -373,7 +373,7 @@ namespace Ps2ToXbox
                 virtualPad.Update(report);
                 xboxVisual.SetReport(report);
             }
-            catch (Exception ex) { StopVirtual("Sesi output terhenti: " + ex.Message); }
+            catch (Exception ex) { StopVirtual("Output session stopped: " + ex.Message); }
         }
 
         private void StopVirtual(string message)
