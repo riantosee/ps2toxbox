@@ -174,11 +174,12 @@ namespace Ps2ToXbox
                 Dock = DockStyle.Fill,
                 ColumnCount = 1,
                 RowCount = 4,
-                Padding = new Padding(24, 20, 24, 16),
+                Padding = new Padding(24, 18, 24, 14),
                 BackColor = Theme.BgApp
             };
-            root.RowStyles.Add(new RowStyle(SizeType.Absolute, 74));
-            root.RowStyles.Add(new RowStyle(SizeType.Absolute, 180));
+            root.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+            root.RowStyles.Add(new RowStyle(SizeType.Absolute, 70));
+            root.RowStyles.Add(new RowStyle(SizeType.Absolute, 175));
             root.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
             root.RowStyles.Add(new RowStyle(SizeType.Absolute, 28));
             Controls.Add(root);
@@ -259,9 +260,10 @@ namespace Ps2ToXbox
             };
             grid.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
             grid.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+            grid.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
             // Card 1: Input Device
-            var inputCard = new ModernCard { Margin = new Padding(0, 0, 8, 0) };
+            var inputCard = new ModernCard { Dock = DockStyle.Fill, Margin = new Padding(0, 0, 8, 0) };
             var inputLayout = new TableLayoutPanel
             {
                 Dock = DockStyle.Fill,
@@ -269,6 +271,7 @@ namespace Ps2ToXbox
                 RowCount = 4,
                 Padding = new Padding(16, 12, 16, 12)
             };
+            inputLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             inputLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 24));
             inputLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 32));
             inputLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 42));
@@ -289,6 +292,7 @@ namespace Ps2ToXbox
             };
             selectRow.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             selectRow.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 105));
+            selectRow.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
             devices.Dock = DockStyle.Fill;
             devices.Margin = new Padding(0, 4, 10, 4);
@@ -315,7 +319,7 @@ namespace Ps2ToXbox
             inputCard.Controls.Add(inputLayout);
 
             // Card 2: Virtual Output
-            var outputCard = new ModernCard { Margin = new Padding(8, 0, 0, 0) };
+            var outputCard = new ModernCard { Dock = DockStyle.Fill, Margin = new Padding(8, 0, 0, 0) };
             var outputLayout = new TableLayoutPanel
             {
                 Dock = DockStyle.Fill,
@@ -323,6 +327,7 @@ namespace Ps2ToXbox
                 RowCount = 4,
                 Padding = new Padding(16, 12, 16, 12)
             };
+            outputLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             outputLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 24));
             outputLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 32));
             outputLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 42));
@@ -343,6 +348,7 @@ namespace Ps2ToXbox
             };
             actionRow.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 55));
             actionRow.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 45));
+            actionRow.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
             startBtn.Text = "▶   Start Controller";
             startBtn.IsPrimary = true;
@@ -379,14 +385,15 @@ namespace Ps2ToXbox
 
         private Control BuildMonitor()
         {
-            var card = new ModernCard { Margin = new Padding(0, 12, 0, 8) };
+            var card = new ModernCard { Dock = DockStyle.Fill, Margin = new Padding(0, 10, 0, 6) };
             var layout = new TableLayoutPanel
             {
                 Dock = DockStyle.Fill,
                 ColumnCount = 1,
                 RowCount = 3,
-                Padding = new Padding(18, 14, 18, 14)
+                Padding = new Padding(18, 12, 18, 12)
             };
+            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 42));
             layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
             layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 46));
@@ -401,11 +408,13 @@ namespace Ps2ToXbox
             };
             header.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             header.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 220));
+            header.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
             var heading = new Panel { Dock = DockStyle.Fill, Margin = Padding.Empty };
             var title = new Label
             {
                 Text = "LIVE INPUT & TELEMETRY MONITOR",
+                UseMnemonic = false,
                 Font = new Font("Segoe UI", 11.5F, FontStyle.Bold),
                 ForeColor = Theme.TextWhite,
                 AutoSize = true,
@@ -441,11 +450,12 @@ namespace Ps2ToXbox
                 Dock = DockStyle.Fill,
                 ColumnCount = 3,
                 RowCount = 1,
-                Margin = new Padding(0, 8, 0, 8)
+                Margin = new Padding(0, 6, 0, 6)
             };
-            columns.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33));
-            columns.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33));
-            columns.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 34));
+            columns.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
+            columns.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
+            columns.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.34f));
+            columns.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
             columns.Controls.Add(BuildStickPanel("LEFT ANALOG STICK (LX / LY)", leftStick, leftValues), 0, 0);
             columns.Controls.Add(BuildStickPanel("RIGHT ANALOG STICK (RX / RY)", rightStick, rightValues), 1, 0);
@@ -469,6 +479,7 @@ namespace Ps2ToXbox
                 RowCount = 3,
                 Margin = new Padding(4, 0, 4, 0)
             };
+            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 24));
             panel.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
             panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 32));
@@ -508,6 +519,7 @@ namespace Ps2ToXbox
                 RowCount = 2,
                 Margin = new Padding(6, 0, 0, 0)
             };
+            panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
             panel.RowStyles.Add(new RowStyle(SizeType.Absolute, 24));
             panel.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
@@ -899,6 +911,7 @@ namespace Ps2ToXbox
         public ModernCard()
         {
             SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw, true);
+            Dock = DockStyle.Fill;
             BackColor = Theme.CardBg;
             Padding = new Padding(1);
         }
@@ -933,6 +946,7 @@ namespace Ps2ToXbox
         public ModernWell()
         {
             SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw, true);
+            Dock = DockStyle.Fill;
             BackColor = Theme.CardWell;
         }
 

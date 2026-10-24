@@ -6,6 +6,10 @@
 
 **ps2toxbox** converts a compatible PlayStation 2 gamepad adapter into an Xbox 360 XInput controller on Windows. It has a dark interface, live stick monitor, and an Xbox controller diagram that highlights the mapped output.
 
+<p align="center">
+  <img src="assets/ps2toxbox-ui.png" alt="ps2toxbox UI Screenshot" width="820"/>
+</p>
+
 ## Compatibility
 
 - Windows x64.
